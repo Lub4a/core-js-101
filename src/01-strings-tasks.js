@@ -5,7 +5,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -18,10 +17,9 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings( value1, value2 ) {
-  return (value1.concat(value2));
+function concatenateStrings(value1, value2) {
+  return value1.concat(value2);
 }
-
 
 /**
  * Returns the length of given string.
@@ -51,8 +49,8 @@ function getStringLength(value) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate( firstName, lastName ) {
-   return `Hello, ${firstName} ${lastName}!`
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -65,10 +63,9 @@ function getStringFromTemplate( firstName, lastName ) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate( value) {
+function extractNameFromTemplate(value) {
   return value.slice(7);
 }
-
 
 /**
  * Returns a first char of the given string.
@@ -111,8 +108,8 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  let count1 = Number(count)
-   return value.repeat(count1);
+  let count1 = Number(count);
+  return value.repeat(count1);
 }
 
 /**
@@ -128,7 +125,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-return str.replace(value, "");
+  return str.replace(value, '');
 }
 
 /**
@@ -143,9 +140,8 @@ return str.replace(value, "");
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
- return str.slice(1, -1)
+  return str.slice(1, -1);
 }
-
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -176,8 +172,8 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails( str) {
-  return str.split(";");
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
@@ -206,7 +202,6 @@ function extractEmails( str) {
 function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
-
 
 /**
  * Encode specified string with ROT13 cipher
@@ -245,7 +240,6 @@ function isString(/* value */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Returns playid card id.
  *
@@ -273,7 +267,6 @@ function isString(/* value */) {
 function getCardId(/* value */) {
   throw new Error('Not implemented');
 }
-
 
 module.exports = {
   concatenateStrings,
