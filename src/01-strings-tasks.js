@@ -64,7 +64,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.slice(7);
+  return value.slice(7, -1);
 }
 
 /**
@@ -222,12 +222,7 @@ function getRectangleString(/* width, height */) {
 function encodeToRot13(str) {
   const start = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const end = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-  let result = '';
-  for (let i = 0; i < str.length; i += 1) {
-    const index = start.indexOf(str[i]);
-    result += end[index];
-  }
-  return result;
+  return str.replace(/[a-z]/gi, (letter) => end[start.indexOf(letter)]);
 }
 
 /**
@@ -244,7 +239,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === 'string') {
+  if (typeof value === 'string' || value instanceof String) {
     return true;
   }
   return false;
