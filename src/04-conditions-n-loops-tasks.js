@@ -30,13 +30,13 @@
 function getFizzBuzz(num) {
   let result = 0;
   switch (num) {
-    case num / 3:
+    case num % 3:
       result = 'Fizz';
       break;
-    case num / 5:
+    case num % 5:
       result = 'Buzz';
       break;
-    case num / 5 && num / 3:
+    case num % 5 && num % 3:
       result = 'FizzBuzz';
       break;
     default:

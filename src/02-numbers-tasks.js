@@ -153,7 +153,6 @@ function getLastDigit(value) {
   return againNumber;
 }
 
-
 /**
  * Returns a number by given string representation.
  *
