@@ -28,19 +28,15 @@
  *
  */
 function getFizzBuzz(num) {
-  let result = 0;
-  switch (num) {
-    case num % 3:
-      result = 'Fizz';
-      break;
-    case num % 5:
-      result = 'Buzz';
-      break;
-    case num % 5 && num % 3:
-      result = 'FizzBuzz';
-      break;
-    default:
-      result = num;
+  let result = '';
+  if (num % 5 === 0 && num % 3 === 0) {
+    result = 'FizzBuzz';
+  } else if (num % 5 === 0) {
+    result = 'Buzz';
+  } else if (num % 3 === 0) {
+    result = 'Fizz';
+  } else {
+    result = num;
   }
   return result;
 }
@@ -57,10 +53,15 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  let result = 1;
+  if (n === 0 || n === 1) {
+    result = 1;
+  } else {
+    result = n * getFactorial(n - 1);
+  }
+  return result;
 }
-
 
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
@@ -242,8 +243,9 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  const str = num.toString().split('').reverse().join('');
+  return Number(str);
 }
 
 
