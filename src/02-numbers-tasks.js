@@ -55,7 +55,7 @@ function getCircleCircumference(radius) {
  */
 function getAverage(value1, value2) {
   let result = 0;
-  if ((value1 + value2) / 2 !== 0) {
+  if (value1 !== 0 || value2 !== 0) {
     result += (value1 + value2) / 2;
   } else {
     result = 0;
@@ -182,7 +182,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  return Math.hypot(a, b, c);
+  return Math.abs(Math.hypot(a, b, c));
 }
 
 
@@ -204,7 +204,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return parseFloat(num.toFixed(pow));
+  // return parseFloat(num.toFixed(pow));
+  const number = 10 ** pow;
+  return Math.round(num * number) / number;
 }
 
 /**
